@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Visions AI</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        .search-container {
+            margin-top: 20px;
+        }
+        .search-box {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background-color: #222;
+            color: white;
+            box-shadow: 0px 0px 5px #ffffff60; /* Subtle glow */
+        }
+        .generate-btn {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff5e00;
+            color: white;
+            cursor: pointer;
+        }
+        .options {
+            margin-top: 10px;
+        }
+        .options label {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .image-container {
+            margin-top: 20px;
+            display: none;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dream Visions AI</h1>
+    <div class="options">
+        <label><input type="radio" name="type" value="picture"> Picture</label>
+        <label><input type="radio" name="type" value="video"> Video</label>
+    </div>
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchInput" placeholder="Type here...">
+        <button class="generate-btn" onclick="generateContent()">Generate</button>
+    </div>
+
+    <!-- Image display section -->
+    <div class="image-container" id="imageContainer">
+        <h2>Your Generated Image:</h2>
+        <img id="generatedImage" src="" alt="Generated AI Image">
+    </div>
+
+    <script>
+        // Mock image generation function
+        function generateContent() {
+            let input = document.getElementById("searchInput").value;
+            let type = document.querySelector('input[name="type"]:checked');
+            let typeText = type ? type.value : "default";
+
+            // For testing: simulate AI image generation
+            alert("Generating " + typeText + " for: " + input);
+
+            // Simulate the generation process (replace this with actual AI integration later)
+            setTimeout(() => {
+                let generatedImageURL = "https://placekitten.com/800/400"; // Placeholder image URL
+                document.getElementById("generatedImage").src = generatedImageURL;
+                document.getElementById("imageContainer").style.display = "block"; // Show image
+            }, 2000); // Simulate a delay for image generation
+        }
+    </script>
+</body>
+</html>
